@@ -1,0 +1,37 @@
+<?php
+error_reporting(0);
+
+$bot_token = "";
+
+require_once __DIR__ . '/webhook/webhook.php';
+
+$DB_HOST = "";
+$DB_PORT = "";
+$DB_NAME = "";
+$DB_USER = "";
+$DB_PASS = "";
+
+$ownerid = [];
+
+$chat_id = $update["message"]["chat"]["id"];
+$gId = $update["message"]["from"]["id"];
+$user_id = $update["message"]["from"]["id"];
+$firstname = $update["message"]["from"]["first_name"];
+$lastname = $update["message"]["from"]["last_name"];
+$username = $update["message"]["from"]["username"];
+$message = $update["message"]["text"];
+$message_id = $update["message"]["message_id"];
+$document = $update["message"]["reply_to_message"]["document"];
+$fileId = $update["message"]["reply_to_message"]["document"]["file_id"];
+$fileName = $update["message"]["reply_to_message"]["document"]["file_name"];
+$fileSize = $update["message"]["reply_to_message"]["document"]["file_size"];
+$query = $update["callback_query"]; 
+$queryid = $query["id"]; 
+$querychatid = $query["message"]["chat"]["id"];; 
+$queryUserId = $query["from"]["id"]; 
+$queryusername = $query["from"]["username"]; 
+$queryname = $query["from"]["first_name"]; 
+$queryname = str_replace('<', '&#60;', $queryname); 
+$querydata = $query["data"]; 
+$querymsgid = $query["message"]["message_id"];
+
